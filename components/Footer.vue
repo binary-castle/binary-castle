@@ -18,27 +18,27 @@
             <div class="col-md-4">
               <h6 class="fw-bold">Primary Pages</h6>
               <nav class="nav flex-column">
-                <a class="nav-link" href="#">Home</a>
-                <a class="nav-link" href="#">Services</a>
-                <a class="nav-link" href="#">Projects</a>
+                <NuxtLink class="nav-link" to="/">Home</NuxtLink>
+                <NuxtLink class="nav-link" to="/services">Services</NuxtLink>
+                <NuxtLink class="nav-link" to="/projects">Projects</NuxtLink>
                 <a class="nav-link" href="#">Open Source</a>
               </nav>
             </div>
             <div class="col-md-4">
               <h6 class="fw-bold">Pages</h6>
               <nav class="nav flex-column">
-                <a class="nav-link" href="#">About</a>
-                <a class="nav-link" href="#">Career</a>
-                <a class="nav-link" href="#">Contact</a>
+                <NuxtLink class="nav-link" to="/about">About</NuxtLink>
+                <NuxtLink class="nav-link" to="/career">Career</NuxtLink>
+                <NuxtLink class="nav-link" to="/contact">Contact</NuxtLink>
               </nav>
             </div>
             <div class="col-md-4">
               <h6 class="fw-bold">Company</h6>
               <nav class="nav flex-column">
                 <a class="nav-link" href="#">Support</a>
-                <a class="nav-link" href="#">Our Team</a>
+                <NuxtLink class="nav-link" to="/team">Our Team</NuxtLink>
                 <a class="nav-link" href="#">Customer Review</a>
-                <a class="nav-link" href="#">Gallery</a>
+                <NuxtLink class="nav-link" to="/gallery">Gallery</NuxtLink>
               </nav>
             </div>
           </div>
