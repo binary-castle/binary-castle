@@ -46,8 +46,9 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github_pages
-      url: https://your-github-username.github.io/your-repo-name/
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
