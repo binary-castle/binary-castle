@@ -1,43 +1,37 @@
-name: Deploy to GitHub Pages
-on:
-  workflow_dispatch:
-  push:
-    branches:
-      - main
+name: Deploy to NuxtHub
+on: push
 
 jobs:
-  build:
+  deploy:
+    name: "Deploy to NuxtHub"
     runs-on: ubuntu-latest
+    environment:
+      name: ${{ github.ref == 'refs/heads/main' && 'production' || 'preview' }}
+      url: ${{ steps.deploy.outputs.deployment-url }}
+    permissions:
+      contents: read
+      id-token: write
+
     steps:
       - uses: actions/checkout@v4
-      - run: corepack enable
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-      # Install dependencies
-      - run: npm install
-      # Set the correct base URL for Nuxt.js build (adjust as per your needs)
-      - run: NUXT_APP_BASE_URL='/binary-castle.github.io/' npx nuxt build --preset github_pages
-      # Upload the artifact for later use in deployment
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./.output/public
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      # Checkout the `gh-pages` branch to deploy the build
-      - name: Checkout gh-pages branch
-        uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
         with:
-          ref: gh-pages
-          token: ${{ secrets.GITHUB_TOKEN }}  # Ensure authentication with GitHub token
+          version: 9
 
-      # Deploy to GitHub Pages
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Install Node.js
+        uses: actions/setup-node@v4
         with:
-          branch: gh-pages  # Explicitly specify the deployment branch
+          node-version: 22
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build application
+        run: pnpm run build
+
+      - name: Deploy to NuxtHub
+        uses: nuxt-hub/action@v1
+        id: deploy
