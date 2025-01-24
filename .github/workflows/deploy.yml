@@ -5,32 +5,20 @@ on:
     branches:
       - main
 
-permissions:
-  contents: write
-  pages: write
-  id-token: write
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Enable Corepack
-        run: corepack enable
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - run: corepack enable
+      - uses: actions/setup-node@v4
         with:
           node-version: "20"
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build Nuxt project
-        run: npx nuxt build --preset github_pages
-
+      # Install dependencies
+      - run: npm install
+      # Set the correct base URL for Nuxt.js build (adjust as per your needs)
+      - run: NUXT_APP_BASE_URL='/binary-castle.github.io/' npx nuxt build --preset github_pages
+      # Upload the artifact for later use in deployment
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -39,16 +27,17 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    environment:
-      name: github_pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
-      - name: Checkout `gh-pages` branch
+      # Checkout the `gh-pages` branch to deploy the build
+      - name: Checkout gh-pages branch
         uses: actions/checkout@v4
         with:
           ref: gh-pages
+          token: ${{ secrets.GITHUB_TOKEN }}  # Ensure authentication with GitHub token
 
+      # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          branch: gh-pages  # Explicitly specify the deployment branch
