@@ -1,5 +1,6 @@
 <script setup lang="ts">
 
+
 </script>
 
 <template>
@@ -20,7 +21,9 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item">
-            <NuxtLink to="/" class="nav-link">Home</NuxtLink>
+            <NuxtLink to="/" class="nav-link">
+              Home
+            </NuxtLink>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#"

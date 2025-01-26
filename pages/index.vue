@@ -1,5 +1,6 @@
 <script setup lang="ts">
 
+import ClientTestimonial from "~/components/ClientTestimonial.vue";
 </script>
 
 <template>
@@ -129,124 +130,25 @@
   </div>
 
   <div class="container my-5">
-    <h1 class="mb-4">Our Products;</h1>
 
     <div class="row">
-      <div class="col-md-6">
-        <div class="card mb-4">
-          <div class="row g-0">
-            <div class="col-md-5">
-              <img src="https://placehold.co/450x450" class="img-fluid rounded-start" alt="...">
-            </div>
-            <div class="col-md-7">
-              <div class="card-body">
-                <h5 class="card-title">Dr Assistant</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural.</p>
-
-                <p class="mb-1">Features:</p>
-                <ul class="row list-unstyled">
-                  <li class="col-4">Item 1</li>
-                  <li class="col-4">Item 2</li>
-                  <li class="col-4">Item 3</li>
-                  <li class="col-4">Item 4</li>
-                  <li class="col-4">Item 5</li>
-                  <li class="col-4">Item 6</li>
-                  <li class="col-4">Item 7</li>
-                  <li class="col-4">Item 8</li>
-                </ul>
-
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="col-md-3">
+        <h1 class="mb-4">Our Products;</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, assumenda consequatur dignissimos dolore eos,
+          facilis id ipsa iste laborum maxime, nostrum obcaecati odio placeat praesentium similique tempora tempore
+          temporibus velit!</p>
       </div>
-
-      <div class="col-md-6">
-        <div class="card mb-4">
-          <div class="row g-0">
-            <div class="col-md-5">
-              <img src="https://placehold.co/450x450" class="img-fluid rounded-start" alt="...">
-            </div>
-            <div class="col-md-7">
-              <div class="card-body">
-                <h5 class="card-title">Dr Assistant Pro</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural.</p>
-                <p class="mb-1">Features:</p>
-                <ul class="row list-unstyled">
-                  <li class="col-4">Item 1</li>
-                  <li class="col-4">Item 2</li>
-                  <li class="col-4">Item 3</li>
-                  <li class="col-4">Item 4</li>
-                  <li class="col-4">Item 5</li>
-                  <li class="col-4">Item 6</li>
-                  <li class="col-4">Item 7</li>
-                  <li class="col-4">Item 8</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="col-md-9">
+        <ProductCard></ProductCard>
+        <ProductCard></ProductCard>
+        <ProductCard></ProductCard>
+        <ProductCard></ProductCard>
+        <ProductCard></ProductCard>
       </div>
-
-      <div class="col-md-6">
-        <div class="card mb-3">
-          <div class="row g-0">
-            <div class="col-md-5">
-              <img src="https://placehold.co/450x450" class="img-fluid rounded-start" alt="...">
-            </div>
-            <div class="col-md-7">
-              <div class="card-body">
-                <h5 class="card-title">xPOS</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural.</p>
-                <p class="mb-1">Features:</p>
-                <ul class="row list-unstyled">
-                  <li class="col-4">Item 1</li>
-                  <li class="col-4">Item 2</li>
-                  <li class="col-4">Item 3</li>
-                  <li class="col-4">Item 4</li>
-                  <li class="col-4">Item 5</li>
-                  <li class="col-4">Item 6</li>
-                  <li class="col-4">Item 7</li>
-                  <li class="col-4">Item 8</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6">
-        <div class="card mb-3">
-          <div class="row g-0">
-            <div class="col-md-5">
-              <img src="https://placehold.co/450x450" class="img-fluid rounded-start" alt="...">
-            </div>
-            <div class="col-md-7">
-              <div class="card-body">
-                <h5 class="card-title">Restulator</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural.</p>
-                <p class="mb-1">Features:</p>
-                <ul class="row list-unstyled">
-                  <li class="col-4">Item 1</li>
-                  <li class="col-4">Item 2</li>
-                  <li class="col-4">Item 3</li>
-                  <li class="col-4">Item 4</li>
-                  <li class="col-4">Item 5</li>
-                  <li class="col-4">Item 6</li>
-                  <li class="col-4">Item 7</li>
-                  <li class="col-4">Item 8</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
     </div>
 
     <div class="text-center">
-      <button class="btn btn-primary">See More ...</button>
+      <NuxtLink to="/projects" class="btn btn-primary">See More ...</NuxtLink>
     </div>
 
   </div>
@@ -256,57 +158,16 @@
 
     <div class="row">
       <div class="col-md-4 my-3">
-        <div class="card">
-          <div class="card-body">
-            <p>star</p>
-            <p>eaque incidunt labore laudantium molestiae officiis quibusdam. Animi corporis
-              deleniti distinctio, dolor esse explicabo labore nam, neque, repellendus sint vel?</p>
-
-            <div class="d-flex align-items-center flex-wrap gap-3">
-              <img src="https://placehold.co/60x60" class="img-thumbnail rounded-circle" alt="">
-              <div>
-                <strong>Theresa Webb</strong>
-                <p class="mb-0">Web enterprise</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <ClientTestimonial></ClientTestimonial>
       </div>
 
       <div class="col-md-4 my-3">
-        <div class="card">
-          <div class="card-body">
-            <p>star</p>
-            <p>eaque incidunt labore laudantium molestiae officiis quibusdam. Animi corporis
-              deleniti distinctio, dolor esse explicabo labore nam, neque, repellendus sint vel?</p>
+        <ClientTestimonial></ClientTestimonial>
 
-            <div class="d-flex align-items-center flex-wrap gap-3">
-              <img src="https://placehold.co/60x60" class="img-thumbnail rounded-circle" alt="">
-              <div>
-                <strong>Theresa Webb</strong>
-                <p class="mb-0">Web enterprise</p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
 
       <div class="col-md-4 my-3">
-        <div class="card">
-          <div class="card-body">
-            <p>star</p>
-            <p>eaque incidunt labore laudantium molestiae officiis quibusdam. Animi corporis
-              deleniti distinctio, dolor esse explicabo labore nam, neque, repellendus sint vel?</p>
-
-            <div class="d-flex align-items-center flex-wrap gap-3">
-              <img src="https://placehold.co/60x60" class="img-thumbnail rounded-circle" alt="">
-              <div>
-                <strong>Theresa Webb</strong>
-                <p class="mb-0">Web enterprise</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <ClientTestimonial></ClientTestimonial>
       </div>
     </div>
   </div>
