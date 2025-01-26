@@ -1,5 +1,21 @@
 <script setup lang="ts">
+import {useState} from "#app";
 
+const theme = useState("theme", () => {
+  // Check localStorage or default to system preference
+  return localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+});
+
+// Update `data-bs-theme` on theme change
+watch(theme, (newTheme) => {
+  document.documentElement.setAttribute("data-bs-theme", newTheme);
+  localStorage.setItem("theme", newTheme);
+});
+
+// Apply theme on page load
+onMounted(() => {
+  document.documentElement.setAttribute("data-bs-theme", theme.value);
+});
 
 </script>
 
@@ -212,7 +228,7 @@
         <!-- Right Side -->
         <div class="d-flex align-items-center">
           <!-- Theme Toggle Icon -->
-          <button class="btn  text-dark">
+          <button class="btn  text-dark" @click="theme = theme === 'dark' ? 'light' : 'dark'">
             🌙
           </button>
 

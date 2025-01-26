@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     modules: ['@vesp/nuxt-fontawesome'],
     fontawesome: {
         icons: {
-            solid: ['house', 'child', 'star'],
+            solid: ['house', 'child', 'star', 'location-dot'],
             regular: ['star'],
             brands: ['twitter'],
         }
