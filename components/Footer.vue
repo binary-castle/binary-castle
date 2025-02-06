@@ -35,9 +35,9 @@
             <div class="col-md-4">
               <h6 class="fw-bold">Company</h6>
               <nav class="nav flex-column">
-                <a class="nav-link" href="#">Support</a>
+                <NuxtLink class="nav-link" to="/support">Support</NuxtLink>
                 <NuxtLink class="nav-link" to="/team">Our Team</NuxtLink>
-                <a class="nav-link" href="#">Customer Review</a>
+                <NuxtLink class="nav-link" to="/review">Customer Review</NuxtLink>
                 <NuxtLink class="nav-link" to="/gallery">Gallery</NuxtLink>
               </nav>
             </div>

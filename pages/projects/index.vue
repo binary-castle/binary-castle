@@ -1,6 +1,10 @@
 <script setup lang="ts">
 
 import ProductCard from "~/components/ProductCard.vue";
+
+useHead({
+  title: 'Projects - BinaryCastle'
+})
 </script>
 
 <template>

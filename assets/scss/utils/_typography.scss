@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+h1, h2, h3, h4, h5, h6 {
+  color: $blue;
+}
+
+.router-link-active {
+  color: $orange;
+}
+
+.title {
+  position: relative;
+  color: $blue;
+
+  &:before {
+    content: "";
+    height: 4px;
+    width: 20%;
+    background-color: $orange;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    border-radius: 3px;
+    opacity: 0.3;
+  }
+
+  &:after {
+    content: ";";
+    color: $orange;
+    opacity: 0.3;
+
+  }
+}

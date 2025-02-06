@@ -1,8 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
 
+$container-max-widths: (
+        xl: 1500px,
+);
+
+$blue: #0A0167;
+$orange: #FF4500;
+
+$colors: (
+        "blue": $blue,
+        "orange": $orange,
+);
 
 @import "bootstrap/scss/bootstrap";
+@import "bootstrap-icons/font/bootstrap-icons.css";
 
 *, body {
   font-family: 'JetBrains Mono', serif;
@@ -10,3 +21,8 @@
   font-style: normal;
 }
 
+@import "utils/typography";
+
+@import "components/navbar";
+
+@import "pages/home";

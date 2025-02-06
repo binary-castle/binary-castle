@@ -1,0 +1,72 @@
+.home-hero {
+  .content {
+    padding-top: 7.5rem;
+  }
+
+  position: relative;
+
+  &:before {
+    content: "{";
+    font-size: 35em;
+    position: absolute;
+    left: -250px;
+    bottom: 0;
+    top: -150px;
+    color: $orange;
+    opacity: 0.2;
+  }
+}
+
+.home-services {
+
+  position: relative;
+  z-index: 2;
+
+  &:after {
+    content: '}';
+    font-size: 35em;
+    position: absolute;
+    right: -250px;
+    top: -50px;
+    bottom: 0;
+    color: $orange;
+    opacity: 0.2;
+    z-index: 1;
+  }
+
+  .service {
+    height: 280px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    padding: 15px;
+    border-radius: 4px;
+    position: relative;
+    z-index: 2;
+
+    &:after {
+      content: ';';
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%) scale(0.8);
+      font-size: 12em;
+      color: $orange;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+      z-index: 1;
+    }
+
+    &:hover {
+      box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1),
+      -10px -10px 30px rgba(255, 255, 255, 0.7);
+      cursor: pointer;
+      border-color: transparent !important;
+
+      &:after {
+        opacity: 0.3;
+        transform: translateY(-50%) scale(1);
+      }
+    }
+  }
+}

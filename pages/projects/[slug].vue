@@ -166,7 +166,7 @@
       </div>
 
       <div class="col-md-4">
-        <h4>Technology</h4>
+        <h5>Technologies</h5>
         <ol class="list-unstyled">
           <li>Laravel</li>
           <li>Vue.js</li>
@@ -174,12 +174,12 @@
           <li>Bootstrap</li>
         </ol>
 
-        <h4>Category</h4>
+        <h5>Categories</h5>
         <ol class="list-unstyled">
           <li>Medical Software</li>
         </ol>
 
-        <h4>Tag</h4>
+        <h5>Tags</h5>
         <ol class="list-unstyled">
           <li>Prescription Software</li>
         </ol>

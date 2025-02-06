@@ -1,0 +1,21 @@
+.navbar {
+
+  .nav-item {
+    padding: 7px 20px;
+
+    .nav-link {
+      &:hover, &:focus {
+        color: $orange;
+      }
+    }
+
+    .active {
+      color: $orange;
+    }
+  }
+
+  .get-start {
+    //background-color: $orange;
+    //border-color: $orange;
+  }
+}

@@ -4,14 +4,16 @@ import ClientTestimonial from "~/components/ClientTestimonial.vue";
 </script>
 
 <template>
-  <div class="container">
+  <div class="container home-hero">
     <div class="row my-3">
       <div class="col-md-8">
-        <h1 class="mt-5">Limitless learning at <br> your fingertips</h1>
-        <p>Online learning and teaching marketplace with 5K+ courses & 10M students. Taught by experts to help you
-          acquire new skills.</p>
+        <div class="content">
+          <h1 class="title">Limitless learning at <br> your fingertips</h1>
+          <p>Online learning and teaching marketplace with 5K+ courses & 10M students. Taught by experts to help you
+            acquire new skills.</p>
 
-        <button class="btn btn-primary btn-lg">Get Started</button>
+          <NuxtLink to="/contact" class="btn btn-primary btn-lg">Get Started</NuxtLink>
+        </div>
       </div>
       <div class="col-md-4">
         Recent projects
@@ -61,66 +63,71 @@ import ClientTestimonial from "~/components/ClientTestimonial.vue";
     </div>
   </div>
 
-  <div class="container mb-5">
-    <h1 class="mb-4">Our Services;</h1>
+  <div class="container mb-5 home-services">
+    <div class="d-flex justify-content-between align-items-center">
+      <h1 class="mb-4 title">Our Services</h1>
+      <div>
+        <NuxtLink to="/services" class="btn btn-outline-primary">Browser all Services</NuxtLink>
+      </div>
+    </div>
 
     <div class="row">
       <div class="col-md-3">
         <div class="card mb-3">
-          <div class="card-body">
-            <img src="https://placehold.co/64x64" alt="">
+          <div class="card-body service">
+            <img src="https://placehold.co/64x64" class="rounded-circle mb-3" alt="">
             <h4>Software Development</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <p>We build custom software solutions tailored to your business needs, ensuring efficiency and scalability.</p>
           </div>
         </div>
       </div>
 
       <div class="col-md-3">
         <div class="card mb-3">
-          <div class="card-body">
-            <img src="https://placehold.co/64x64" alt="">
+          <div class="card-body service">
+            <img src="https://placehold.co/64x64" class="rounded-circle mb-3" alt="">
             <h4>Web Development</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <p>Our team develops responsive and high-performance web applications to elevate your online presence.</p>
           </div>
         </div>
       </div>
 
       <div class="col-md-3">
         <div class="card mb-3">
-          <div class="card-body">
-            <img src="https://placehold.co/64x64" alt="">
+          <div class="service">
+            <img src="https://placehold.co/64x64" class="rounded-circle mb-3" alt="">
             <h4>Mobile App Development</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <p>We create user-friendly mobile apps for iOS and Android, optimized for performance and engagement.</p>
           </div>
         </div>
       </div>
 
       <div class="col-md-3">
         <div class="card mb-3">
-          <div class="card-body">
-            <img src="https://placehold.co/64x64" alt="">
+          <div class="card-body service">
+            <img src="https://placehold.co/64x64" class="rounded-circle mb-3" alt="">
             <h4>Enterprise Solution</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <p>We offer ERP and enterprise software solutions to streamline operations and improve productivity.</p>
           </div>
         </div>
       </div>
 
       <div class="col-md-3">
         <div class="card mb-3">
-          <div class="card-body">
-            <img src="https://placehold.co/64x64" alt="">
+          <div class="card-body service">
+            <img src="https://placehold.co/64x64" class="rounded-circle mb-3" alt="">
             <h4>Software Quality Assurance</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <p>Our QA services ensure your software is reliable, secure, and performs flawlessly across all platforms.</p>
           </div>
         </div>
       </div>
 
       <div class="col-md-3">
         <div class="card mb-3">
-          <div class="card-body">
-            <img src="https://placehold.co/64x64" alt="">
+          <div class="card-body service">
+            <img src="https://placehold.co/64x64" class="rounded-circle mb-3" alt="">
             <h4>AI / Machine Learning </h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <p>We develop AI-driven solutions, including predictive analytics, automation, and intelligent chatbots.</p>
           </div>
         </div>
       </div>
@@ -133,7 +140,7 @@ import ClientTestimonial from "~/components/ClientTestimonial.vue";
 
     <div class="row">
       <div class="col-md-3">
-        <h1 class="mb-4">Our Products;</h1>
+        <h1 class="mb-4 title">Our Products</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, assumenda consequatur dignissimos dolore eos,
           facilis id ipsa iste laborum maxime, nostrum obcaecati odio placeat praesentium similique tempora tempore
           temporibus velit!</p>
@@ -154,7 +161,7 @@ import ClientTestimonial from "~/components/ClientTestimonial.vue";
   </div>
 
   <div class="container mb-5">
-    <h1 class="mb-4">What they say about us;</h1>
+    <h1 class="mb-4 title">What they say about us</h1>
 
     <div class="row">
       <div class="col-md-4 my-3">
