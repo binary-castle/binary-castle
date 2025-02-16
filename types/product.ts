@@ -35,5 +35,8 @@ export interface Product {
 }
 
 export interface ProductsResponse {
-    products: Product[];
+    count: number;
+    next: string | null;
+    previous: string | null;
+    results: Product[];
 }

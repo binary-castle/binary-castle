@@ -10,7 +10,7 @@ const {
   data,
   pending,
   error
-} = useFetch<HomePageResponse>(`${apiUrl}/website/home-page/?format=json`);
+} = useFetch<HomePageResponse>(`${apiUrl}/website/home-page/`);
 </script>
 
 <template>

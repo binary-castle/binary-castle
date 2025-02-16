@@ -10,11 +10,14 @@ defineProps<Props>()
 </script>
 
 <template>
+
   <div class="card product-card shadow-sm mb-4">
+
     <div class="row g-0">
       <!-- Product Image -->
       <div class="col-md-5 position-relative">
-        <div class="product-image" :style="{'backgroundImage': `url(${product.feature_image})`}"></div>
+        <div role="button" @click="navigateTo(`projects/${product.slug}`)" class="product-image"
+             :style="{'backgroundImage': `url(${product.feature_image})`}"></div>
         <div class="position-absolute w-100 bottom-0 p-2 technologies">
           <p class="mb-0">Technologies: </p>
           <ol class="list list-inline mb-0">
@@ -27,8 +30,10 @@ defineProps<Props>()
       <!-- Product Details -->
       <div class="col-md-7">
         <div class="card-body">
-          <div class="d-flex justify-content-between">
-            <h5 class="card-title fw-bold">{{ product.name }}</h5>
+          <div class="d-flex justify-content-between title-content">
+            <NuxtLink :to="`projects/${product.slug}`">
+              <h5 class="card-title fw-bold">{{ product.name }}</h5>
+            </NuxtLink>
           </div>
           <p class="card-text text-muted small">
             {{ product.short_description }}
@@ -58,6 +63,8 @@ defineProps<Props>()
         </div>
       </div>
     </div>
+
+
   </div>
 </template>
 

@@ -1,10 +1,21 @@
 <script setup lang="ts">
 
 import ProductCard from "~/components/ProductCard.vue";
+import type {HomePageResponse} from "~/types/home";
+import type {ProductsResponse} from "~/types/product";
+
+const config = useRuntimeConfig();
+const apiUrl = config.public.API_BASE_URL;
 
 useHead({
   title: 'Projects - BinaryCastle'
 })
+
+const {
+  data,
+  pending,
+  error
+} = useFetch<ProductsResponse>(`${apiUrl}/website/projects/?format=json`);
 </script>
 
 <template>
@@ -16,9 +27,9 @@ useHead({
 
     <div class="row">
       <div class="col-md-9">
-        <ProductCard></ProductCard>
-        <ProductCard></ProductCard>
-        <ProductCard></ProductCard>
+        <template v-for="product in data?.results">
+          <ProductCard :product="product"></ProductCard>
+        </template>
       </div>
 
       <div class="col-md-3">
