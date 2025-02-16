@@ -1,0 +1,27 @@
+.services-page {
+  .main-content {
+    padding: 4rem 0 0 0;
+  }
+
+  .service {
+    padding: 4rem 0;
+
+    .card {
+
+      .service-card-image {
+        height: 64px;
+        width: 64px;
+        background-color: mix($blue, $white, 5%);
+        border-radius: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: .5rem;
+
+        svg {
+          fill: $orange;
+        }
+      }
+    }
+  }
+}
