@@ -7,13 +7,11 @@
     <div class="container">
       <div class="row my-5">
         <div class="col-md-4">
-          <h3>Current Available Positions at Quiety</h3>
+          <h3 class="title">Current Available Positions at BinaryCastle</h3>
         </div>
 
         <div class="col-md-8">
-          <p>Phosfluorescently disintermediate revolutionary paradigms before enabled interfaces. Dynamically transition
-            skills vis-a-vis virtual customer service via impactful partnerships with technically sound paradigms with
-            cutting-edge initiatives.</p>
+          <p class="text-end"><br> Join as Binary warrior.</p>
         </div>
       </div>
 
@@ -91,7 +89,6 @@
 
 <style scoped>
 .bg-career {
-  background-image: url('/assets/img/bg-vector/vector-2.jpg');
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;

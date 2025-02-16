@@ -1,6 +1,13 @@
 <script setup lang="ts">
 
 import ClientTestimonial from "~/components/ClientTestimonial.vue";
+import type {HomePageResponse} from "~/types/home";
+
+const {
+  data,
+  pending,
+  error
+} = useFetch<HomePageResponse>('http://localhost:8000/website/home-page/?format=json');
 </script>
 
 <template>
@@ -208,18 +215,10 @@ import ClientTestimonial from "~/components/ClientTestimonial.vue";
     <h1 class="mb-4 title">What they say about us</h1>
 
     <div class="row">
-      <div class="col-md-4 my-3">
-        <ClientTestimonial></ClientTestimonial>
+      <div class="col-md-4 my-3" v-for="testimonial in data?.testimonials" :key="testimonial.id">
+        <ClientTestimonial :testimonial="testimonial"></ClientTestimonial>
       </div>
 
-      <div class="col-md-4 my-3">
-        <ClientTestimonial></ClientTestimonial>
-
-      </div>
-
-      <div class="col-md-4 my-3">
-        <ClientTestimonial></ClientTestimonial>
-      </div>
     </div>
   </div>
 
@@ -227,7 +226,9 @@ import ClientTestimonial from "~/components/ClientTestimonial.vue";
     <div class="card py-5 text-center">
       <h1>Let's get started</h1>
       <div class="text-center">
-        <button class="btn btn-primary" style="width: 250px">Contact Us</button>
+        <NuxtLink to="/contact" class="btn btn-primary" style="width: 250px">
+          Contact Us
+        </NuxtLink>
       </div>
       <p>To discuss further about your business needs</p>
     </div>
