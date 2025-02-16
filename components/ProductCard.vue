@@ -8,7 +8,7 @@
       <!-- Product Image -->
       <div class="col-md-5 position-relative">
         <div
-            style="height: 400px; background-image: url('https://placehold.co/450x450'); background-position: center; background-repeat: no-repeat"></div>
+            style="height: 400px; background-image: url('https://placehold.co/450x450'); background-position: center; background-size: cover; background-repeat: no-repeat"></div>
         <div class="position-absolute w-100 bottom-0 p-2">
           <p class="mb-0">Technologies: </p>
           <ol class="list list-inline mb-0">

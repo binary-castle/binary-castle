@@ -1,5 +1,3 @@
-
-
 $container-max-widths: (
         xl: 1500px,
 );
@@ -24,5 +22,6 @@ $colors: (
 @import "utils/typography";
 
 @import "components/navbar";
+@import "components/footer";
 
 @import "pages/home";

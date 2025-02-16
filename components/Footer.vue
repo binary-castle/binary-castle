@@ -8,14 +8,14 @@
     <div class="container">
       <div class="row">
         <!-- Left Column -->
-        <div class="col-lg-4">
+        <div class="col-lg-4 footer-logo">
           <img src="/assets/img/logo-v.svg" alt="" height="100px" width="auto">
         </div>
 
         <!-- Links Column -->
         <div class="col-lg-8">
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-6 col-md-4">
               <h6 class="fw-bold">Primary Pages</h6>
               <nav class="nav flex-column">
                 <NuxtLink class="nav-link" to="/">Home</NuxtLink>
@@ -24,7 +24,7 @@
                 <a class="nav-link" href="#">Open Source</a>
               </nav>
             </div>
-            <div class="col-md-4">
+            <div class="col-6 col-md-4">
               <h6 class="fw-bold">Pages</h6>
               <nav class="nav flex-column">
                 <NuxtLink class="nav-link" to="/about">About</NuxtLink>

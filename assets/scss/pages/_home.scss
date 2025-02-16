@@ -1,6 +1,11 @@
 .home-hero {
   .content {
     padding-top: 7.5rem;
+
+    @include media-breakpoint-down(sm) {
+      padding-top: 3.5rem;
+      padding-bottom: 3.5rem;
+    }
   }
 
   position: relative;
@@ -14,6 +19,10 @@
     top: -150px;
     color: $orange;
     opacity: 0.2;
+
+    @include media-breakpoint-down(sm) {
+      content: ''
+    }
   }
 }
 
@@ -21,18 +30,6 @@
 
   position: relative;
   z-index: 2;
-
-  &:after {
-    content: '}';
-    font-size: 35em;
-    position: absolute;
-    right: -250px;
-    top: -50px;
-    bottom: 0;
-    color: $orange;
-    opacity: 0.2;
-    z-index: 1;
-  }
 
   .service {
     height: 280px;
@@ -43,6 +40,17 @@
     border-radius: 4px;
     position: relative;
     z-index: 2;
+
+    .service-image {
+      height: 64px;
+      width: 64px;
+      background-color: mix($orange, white, 10%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
 
     &:after {
       content: ';';

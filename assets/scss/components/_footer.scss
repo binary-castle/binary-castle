@@ -1,0 +1,8 @@
+.footer {
+  .footer-logo {
+    @include media-breakpoint-down(sm) {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+  }
+}
