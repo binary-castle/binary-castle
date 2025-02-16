@@ -1,5 +1,12 @@
 <script setup lang="ts">
 
+import type {Product} from "~/types/product";
+
+interface Props {
+  product: Product
+}
+
+defineProps<Props>()
 </script>
 
 <template>
@@ -7,15 +14,11 @@
     <div class="row g-0">
       <!-- Product Image -->
       <div class="col-md-5 position-relative">
-        <div
-            style="height: 400px; background-image: url('https://placehold.co/450x450'); background-position: center; background-size: cover; background-repeat: no-repeat"></div>
-        <div class="position-absolute w-100 bottom-0 p-2">
+        <div class="product-image" :style="{'backgroundImage': `url(${product.feature_image})`}"></div>
+        <div class="position-absolute w-100 bottom-0 p-2 technologies">
           <p class="mb-0">Technologies: </p>
           <ol class="list list-inline mb-0">
-            <li class="list-inline-item">Laravel</li>
-            <li class="list-inline-item">Vue</li>
-            <li class="list-inline-item">MySQL</li>
-            <li class="list-inline-item">MySQL</li>
+            <li v-for="tech in product.technologies" class="list-inline-item">{{ tech.name }}</li>
           </ol>
 
         </div>
@@ -25,13 +28,13 @@
       <div class="col-md-7">
         <div class="card-body">
           <div class="d-flex justify-content-between">
-            <h5 class="card-title fw-bold">Dr Assistant Pro</h5>
+            <h5 class="card-title fw-bold">{{ product.name }}</h5>
           </div>
           <p class="card-text text-muted small">
-            Patient and prescription management system
+            {{ product.short_description }}
           </p>
 
-          <span class="badge bg-danger">Medical</span>
+          <span class="badge bg-danger" v-for="category in product.categories">{{ category.name }}</span>
 
           <!-- Features -->
           <div class="mt-3">
@@ -47,9 +50,8 @@
           </div>
 
           <div class="d-flex gap-2">
-            <button class="btn btn-primary">Buy Now</button>
-            <button class="btn btn-secondary">Demo</button>
-            <button class="btn btn-info">Doc</button>
+            <a v-for="button in product.buttons" :class="button.css_class" :href="button.url"
+               target="_blank">{{ button.title }}</a>
           </div>
 
 

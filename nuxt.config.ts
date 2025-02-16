@@ -11,5 +11,10 @@ export default defineNuxtConfig({
             regular: ['star'],
             brands: ['twitter'],
         }
+    },
+    runtimeConfig: {
+        public: {
+            API_BASE_URL: process.env.NUXT_PUBLIC_API_BASE_URL || 'http://localhost:8000'
+        }
     }
 })

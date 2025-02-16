@@ -3,11 +3,14 @@
 import ClientTestimonial from "~/components/ClientTestimonial.vue";
 import type {HomePageResponse} from "~/types/home";
 
+const config = useRuntimeConfig();
+const apiUrl = config.public.API_BASE_URL;
+
 const {
   data,
   pending,
   error
-} = useFetch<HomePageResponse>('http://localhost:8000/website/home-page/?format=json');
+} = useFetch<HomePageResponse>(`${apiUrl}/website/home-page/?format=json`);
 </script>
 
 <template>
@@ -25,47 +28,21 @@ const {
       <div class="col-md-4 d-none d-md-block">
         Recent projects
 
-        <div class="card mb-3">
+        <div class="card mb-3" v-for="product in data?.recent_products" :key="product.id">
           <div class="row g-0">
             <div class="col-4">
-              <img src="https://placehold.co/250x250" class="img-fluid rounded-start" alt="...">
+              <img :src="product.icon" class="img-fluid rounded-start" alt="...">
             </div>
             <div class="col-8">
               <div class="card-body">
-                <h5 class="card-title">Dr Assistant Pro</h5>
-                <p class="card-text">Patient and prescription management system</p>
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">{{ product.short_description }}</p>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="card mb-3">
-          <div class="row g-0">
-            <div class="col-4">
-              <img src="https://placehold.co/250x250" class="img-fluid rounded-start" alt="...">
-            </div>
-            <div class="col-8">
-              <div class="card-body">
-                <h5 class="card-title">Restulator</h5>
-                <p class="card-text">Restaurant Management System</p>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <div class="card mb-3">
-          <div class="row g-0">
-            <div class="col-4">
-              <img src="https://placehold.co/250x250" class="img-fluid rounded-start" alt="...">
-            </div>
-            <div class="col-8">
-              <div class="card-body">
-                <h5 class="card-title">xPOS</h5>
-                <p class="card-text">Point of sale solution</p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -197,11 +174,10 @@ const {
           temporibus velit!</p>
       </div>
       <div class="col-md-9">
-        <ProductCard></ProductCard>
-        <ProductCard></ProductCard>
-        <ProductCard></ProductCard>
-        <ProductCard></ProductCard>
-        <ProductCard></ProductCard>
+        <template v-for="product in data?.products">
+          <ProductCard :product="product"></ProductCard>
+        </template>
+
       </div>
     </div>
 
