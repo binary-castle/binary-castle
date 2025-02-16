@@ -35,7 +35,6 @@
     height: 280px;
     overflow: hidden;
     transition: all 0.3s ease-in-out;
-    border: 1px solid rgba(0, 0, 0, 0.25);
     padding: 15px;
     border-radius: 4px;
     position: relative;
@@ -44,12 +43,18 @@
     .service-image {
       height: 64px;
       width: 64px;
-      background-color: mix($orange, white, 10%);
+      background-color: mix($primary, $white, 10%);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 1rem;
+      transition: all .4s ease-in-out;
+
+      svg {
+        fill: $orange;
+        transition: fill .4s ease-in-out;
+      }
     }
 
     &:after {
@@ -70,6 +75,14 @@
       -10px -10px 30px rgba(255, 255, 255, 0.7);
       cursor: pointer;
       border-color: transparent !important;
+
+      .service-image {
+        background-color: $orange;
+
+        svg {
+          fill: $white;
+        }
+      }
 
       &:after {
         opacity: 0.3;
