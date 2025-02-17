@@ -45,12 +45,7 @@ defineProps<Props>()
           <div class="mt-3">
             <strong>Features:</strong>
             <ul class="row">
-              <li class="col-6">Dynamic roles and permissions</li>
-              <li class="col-6">Easy to write prescription builder</li>
-              <li class="col-6">Drag n Drop Prescription Designer</li>
-              <li class="col-6">Easy Appointment from Web and dashboard</li>
-              <li class="col-6">Drag n Drop page builder with SEO meta support</li>
-              <li class="col-6">Standalone and linked invoice manager</li>
+              <li class="col-6" v-for="(feature, index) in product.features">{{ feature.title }}</li>
             </ul>
           </div>
 

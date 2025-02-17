@@ -19,6 +19,14 @@ export interface Button {
     css_class: string;
 }
 
+export interface Feature {
+    id: number;
+    title: string;
+    description: string;
+    icon: string;
+    project: number
+}
+
 export interface Product {
     id: number;
     name: string;
@@ -32,6 +40,7 @@ export interface Product {
     technologies: Technology[];
     tags: Tag[];
     buttons: Button[];
+    features: Feature[];
 }
 
 export interface ProductsResponse {

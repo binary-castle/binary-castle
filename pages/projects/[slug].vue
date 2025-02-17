@@ -32,7 +32,7 @@
     </div>
 
     <div class="row py-5">
-      <h3>Features;</h3>
+      <h3 class="">Features</h3>
       <div class="row">
         <div class="col-md-2 mb-4">
           <div class="card">
